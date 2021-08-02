@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <p className="heading">FLicker Images</p>
+        
+        <p className="heading">Search Images from Flicker</p>
       </div>
       <MainPage></MainPage>
       

@@ -17,7 +17,7 @@ function SearchBar(props) {
     return (
         <div>
             <TextField id="outlined-basic" label="Type to search Images" variant="outlined" onChange={onTextUpdate}/>
-            <Button variant="contained" onClick={handleClick}>Search</Button>
+            <Button id="search" variant="contained" onClick={handleClick}>Search</Button>
             <p>Recent Search</p>
             {localStorage.getItem("suggest") && JSON.parse(localStorage.getItem("suggest")).map((data,index)=> <><button>{data}</button></>)}
             
