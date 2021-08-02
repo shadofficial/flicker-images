@@ -55,7 +55,7 @@ export default function ImageCard(props) {
     <div>
       <Card>
         <CardContent >
-            <img
+            <img class="imgcard"
                 src={`https://live.staticflickr.com/${photo?.server}/${photo?.id}_${photo?.secret}.jpg`}
                 alt={photo?.title}
                 onClick={handleOpen}
@@ -65,7 +65,7 @@ export default function ImageCard(props) {
         <Modal
             open={open}
             onClose={handleClose}
-            aria-labelledby="simple-modal-title"
+            aria-labelledby={photo?.title}
             aria-describedby="simple-modal-description"
         >
             {body}

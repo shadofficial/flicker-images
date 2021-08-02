@@ -7,7 +7,6 @@ import ImageCard from './component/ui-elements/ImageCard';
 function App() {
   return (
     <div className="App">
-      <ImageCard></ImageCard>
       <MainPage></MainPage>
       
     </div>

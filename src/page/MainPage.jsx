@@ -6,13 +6,13 @@ import { fetchSearch,fetchdefault } from '../services';
 import '../App.css';
 
 function MainPage() {
-    const [searchText, setSearchText] = useState("rivers");
+    const [searchText, setSearchText] = useState(null);
     const [content, setContent] = useState([]);
     const [page, setPage] = useState(1);
-
+    
 
     const searchImage = async (searchText) => {
-        const data = await fetchSearch(searchText);
+        const data = (searchText) ? await fetchSearch(searchText): await fetchdefault();
         setSearchText(searchText);
         setContent(data);
 
@@ -27,15 +27,17 @@ function MainPage() {
 
     }
     useEffect(()=>{
-        if(!!localStorage.getItem("suggest")){
+        if(localStorage.getItem("suggest")){
+            if(searchText){
             localStorage.setItem("suggest", JSON.stringify([...JSON.parse(localStorage.getItem("suggest")),searchText]));
-        }else{
+        }}else{
             localStorage.setItem("suggest",JSON.stringify([]))
         }
-       
+    
         
     },[searchText])
-
+   
+   
     const loadMore = async () => {
         setPage(page+1);
         const data = await fetchSearch(searchText, page);
