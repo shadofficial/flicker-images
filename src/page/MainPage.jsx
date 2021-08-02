@@ -15,7 +15,26 @@ function MainPage() {
         const data = await fetchSearch(searchText);
         setSearchText(searchText);
         setContent(data);
+
+       /**let localdata= localStorage.getItem("suggest");
+        if(localdata.length){
+       localdata.push(searchText);
+        }else{
+            localdata=[searchText];
+        }
+        localStorage.setItem("suggest", localdata);
+**/
+
     }
+    useEffect(()=>{
+        if(!!localStorage.getItem("suggest")){
+            localStorage.setItem("suggest", JSON.stringify([...JSON.parse(localStorage.getItem("suggest")),searchText]));
+        }else{
+            localStorage.setItem("suggest",JSON.stringify([]))
+        }
+       
+        
+    },[searchText])
 
     const loadMore = async () => {
         setPage(page+1);
