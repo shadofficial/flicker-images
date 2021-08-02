@@ -18,7 +18,7 @@
   margin-bottom: 8px;
 }
 #search{
-  height: 52px;
+  height: 54px;
   background-color: blue;
   border-color: blue;
   color:white;
@@ -30,6 +30,10 @@
 }
 button{
   margin:3px;
+  background-color:#1877f2;
+    color: white;
+    border-color: #1877f2;
+    padding:7px;
 }
 
 .App-logo {
