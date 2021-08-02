@@ -6,7 +6,7 @@ import { fetchSearch,fetchdefault } from '../services';
 import '../App.css';
 
 function MainPage() {
-    const [searchText, setSearchText] = useState("man");
+    const [searchText, setSearchText] = useState("rivers");
     const [content, setContent] = useState([]);
     const [page, setPage] = useState(1);
 
