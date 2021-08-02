@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import SearchBar from './component/SearchBar';
 import MainPage from './page/MainPage';
-import ImageCard from './component/ui-elements/ImageCard';
 
 function App() {
   return (
     <div className="App">
+      <div className="header">
+        <p className="heading">FLicker Images</p>
+      </div>
       <MainPage></MainPage>
       
     </div>
